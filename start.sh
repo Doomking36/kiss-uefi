@@ -1,8 +1,8 @@
 #!/bin/sh
 
 yes | pacman -Sy tar curl xz
-wget https://github.com/noirlinux/main/releases/download/2022.NOV-1/noir-chroot-2022.NOV-1.tar.xz
-tar xf noir-chroot-2022.NOV-1.tar.xz -C /mnt
+curl --output kiss.xz https://codeberg.org/attachments/7f91bc9e-6fb1-481f-bacd-95798fbf298c
+tar xf kiss.xz -C /mnt
 cp chroot.sh /mnt
 cp profile /mnt
 
