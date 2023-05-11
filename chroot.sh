@@ -25,8 +25,8 @@ mv config /root
 cd ..
 rm -rf vmware
 
-echo "noir" > /etc/hostname
-echo "127.0.0.1 noir.localdomain noir::1 noir.localdomain noir ip6-localhost" > /etc/hosts
+echo "kiss" > /etc/hostname
+echo "127.0.0.1 kiss.localdomain kiss::1 kiss.localdomain kiss ip6-localhost" > /etc/hosts
 
 echo root:123 | chpasswd
 adduser -h /home/dk dk
