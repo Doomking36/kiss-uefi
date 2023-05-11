@@ -1,10 +1,13 @@
 #!/bin/sh
 
+# Build Flags
 export CFLAGS="-march=x86-64 -mtune=generic -Os"
 export CXXFLAGS="-march=x86-64 -mtune=generic -Os"
 export MAKEFLAGS="-j1"
+# Set date and time
 export TZ=CDT
 
+# There was an error with the su for the tarbell, so this line will fix it
 chmod u+s /usr/bin/busybox-suid
 
 mkdir -p /home/dk/repos
