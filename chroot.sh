@@ -60,5 +60,5 @@ cd /home/dk
 tune2fs -O ^metadata_csum_seed /dev/mmcblk0p2
 echo GRUB_DISABLE_OS_PROBER=false >> /etc/default/grub
 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=noir
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=kiss
 grub-mkconfig -o /boot/grub/grub.cfg
