@@ -1,5 +1,9 @@
 #!/bin/sh
 
+export CFLAGS="-march=x86-64 -mtune=generic -Os"
+export CXXFLAGS="-march=x86-64 -mtune=generic -Os"
+export MAKEFLAGS="-j1"
+
 mkdir -p /home/dk/repos
 mv profile /home/dk
 cd /home/dk
@@ -15,7 +19,7 @@ git clone https://github.com/ehawkvu/kiss-xorg /home/dk/repos/xorg
 
 yes | kiss u
 yes | kiss U
-yes | kiss b baseinit grub e2fsprogs dhcpcd ncurses libelf perl vim libudev-zero util-linux opendoas
+yes | kiss b baseinit grub e2fsprogs dhcpcd ncurses libelf perl vim libudev-zero util-linux opendoas efibootmgr wpa_supplicant dosfstools
 
 git clone https://github.com/Doomking36/chromebook
 cd chromebook
@@ -27,6 +31,8 @@ rm -rf vmware
 
 echo "kiss" > /etc/hostname
 echo "127.0.0.1 kiss.localdomain kiss::1 kiss.localdomain kiss ip6-localhost" > /etc/hosts
+
+export TZ=CDT
 
 echo root:123 | chpasswd
 adduser -h /home/dk dk
