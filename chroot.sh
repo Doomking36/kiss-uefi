@@ -52,6 +52,11 @@ curl -fLO https://github.com/cemkeylan/genfstab/raw/master/genfstab
 chmod +x genfstab
 ./genfstab -U / >> /etc/fstab
 
+rm -rf genfstab kiss-uefi/
+cd /
+rm -rf chroot.sh
+cd /home/dk
+
 tune2fs -O ^metadata_csum_seed /dev/mmcblk0p2
 echo GRUB_DISABLE_OS_PROBER=false >> /etc/default/grub
 
