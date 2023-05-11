@@ -5,12 +5,17 @@ mv profile /home/dk
 cd /home/dk
 mv profile ~/.profile
 
-git clone https://github.com/noirlinux/main /home/dk/repos/noir
+chmod u+s /usr/bin/busybox-suid
+
+git clone https://github.com/kiss-community/repo /home/dk/repos/repo
+git clone https://github.com/kiss-community/community /home/dk/repos/community
+git clone https://github.com/ehawkvu/kiss-xorg /home/dk/repos/xorg
 
 . ~/.profile
 
-yes | kiss update
-yes | kiss b baseinit grub e2fsprogs dhcpcd ncurses libelf perl vim libudev-zero util-linux efivar opendoas efibootmgr wpa_supplicant dosfstools
+yes | kiss u
+yes | kiss U
+yes | kiss b baseinit grub e2fsprogs dhcpcd ncurses libelf perl vim libudev-zero util-linux opendoas
 
 git clone https://github.com/Doomking36/chromebook
 cd chromebook
