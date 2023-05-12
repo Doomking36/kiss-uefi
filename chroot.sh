@@ -24,7 +24,7 @@ mv vm* /boot
 mv Sys* /boot
 mv config /root
 cd ..
-rm -rf vmware
+rm -rf chromebook
 
 echo "kiss" > /etc/hostname
 echo "127.0.0.1 kiss.localdomain kiss::1 kiss.localdomain kiss ip6-localhost" > /etc/hosts
