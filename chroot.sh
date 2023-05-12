@@ -23,7 +23,7 @@ cd chromebook
 mv vm* /boot
 mv Sys* /boot
 mv config /root
-cd ..
+cd /home/dk
 rm -rf chromebook
 
 echo "kiss" > /etc/hostname
@@ -42,16 +42,15 @@ su dk << EOT
 git clone https://github.com/Doomking36/kiss-uefi
 cp kiss-uefi/profile /home/dk
 mv profile ~/.profile
+exit
 EOT
 
 curl -fLO https://github.com/cemkeylan/genfstab/raw/master/genfstab
 chmod +x genfstab
 ./genfstab -U / >> /etc/fstab
 
-rm -rf genfstab kiss-uefi/
-cd /
-rm -rf chroot.sh
-cd /home/dk
+rm -rf genfstab
+rm -rf /chroot.sh
 
 tune2fs -O ^metadata_csum_seed /dev/mmcblk0p2
 echo GRUB_DISABLE_OS_PROBER=false >> /etc/default/grub
